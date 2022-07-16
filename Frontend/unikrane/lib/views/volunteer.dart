@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:unikrane/widgets/customDialog.dart';
 
-class Categories extends StatefulWidget {
-  const Categories({Key? key}) : super(key: key);
+class VolunteerCategories extends StatefulWidget {
+  const VolunteerCategories({Key? key}) : super(key: key);
 
   @override
-  State<Categories> createState() => _CategoriesState();
+  State<VolunteerCategories> createState() => _VolunteerCategoriesState();
 }
 
-class _CategoriesState extends State<Categories> {
+class _VolunteerCategoriesState extends State<VolunteerCategories> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,9 +29,9 @@ class _CategoriesState extends State<Categories> {
                   ],
                 ),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 0, 0, 20),
+                  padding: const EdgeInsets.fromLTRB(20, 0, 0, 20),
                   child: Text(
-                    "Choose help",
+                    "What services can you offer?",
                     textAlign: TextAlign.start,
                     style: GoogleFonts.poppins(
                       textStyle: TextStyle(
@@ -44,7 +44,7 @@ class _CategoriesState extends State<Categories> {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(25, 0, 25, 0),
                   child: Text(
-                    "Choose from the categories below and browse local programs, or search for any service. Select one service at a time.",
+                    "Choose from the Categories below and browse local programs, or search for any service. Select one service at a time.",
                     textAlign: TextAlign.start,
                     style: GoogleFonts.poppins(
                       textStyle: TextStyle(
@@ -61,7 +61,7 @@ class _CategoriesState extends State<Categories> {
                   child: Column(
                     children: [
                       Container(
-                        height: 205,
+                        height: 255,
                         width: 350,
                         color: Color(0xfffff27d),
                         child: SingleChildScrollView(
@@ -98,6 +98,34 @@ class _CategoriesState extends State<Categories> {
                                               20, 10, 20, 10),
                                           child: Text(
                                             "Emergency food",
+                                            style: GoogleFonts.poppins(
+                                              textStyle: TextStyle(
+                                                  fontSize: 20,
+                                                  fontWeight: FontWeight.w400,
+                                                  color: Colors.black),
+                                            ),
+                                          ),
+                                        ),
+                                        onPressed: () {
+                                          Navigator.pushNamed(
+                                              context, '/radar');
+                                        },
+                                        style: ElevatedButton.styleFrom(
+                                            primary: Colors.white,
+                                            elevation: 4),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 10,
+                                    ),
+                                    SizedBox(
+                                      width: 300,
+                                      child: ElevatedButton(
+                                        child: Padding(
+                                          padding: const EdgeInsets.fromLTRB(
+                                              20, 10, 20, 10),
+                                          child: Text(
+                                            "Help pay for food",
                                             style: GoogleFonts.poppins(
                                               textStyle: TextStyle(
                                                   fontSize: 20,

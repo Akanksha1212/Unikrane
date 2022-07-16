@@ -99,7 +99,7 @@ class _WhatState extends State<What> {
                 ),
               ),
               onPressed: () {
-                Navigator.pushNamed(context, '/home');
+                Navigator.pushNamed(context, '/volunteer');
               },
             ),
           ],

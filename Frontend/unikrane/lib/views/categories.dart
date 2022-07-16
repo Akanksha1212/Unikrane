@@ -1,5 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:unikrane/views/languages.dart';
 import 'package:unikrane/widgets/customDialog.dart';
 
 class Categories extends StatefulWidget {
@@ -26,12 +28,43 @@ class _CategoriesState extends State<Categories> {
                         image: AssetImage('assets/toplogo.png'),
                         width: 150,
                         height: 150),
+                    ElevatedButton(
+                      child: Padding(
+                        padding: const EdgeInsets.fromLTRB(5, 5, 5, 5),
+                        child: Row(
+                          children: [
+                            Image(
+                                image: AssetImage('assets/translategoogle.png'),
+                                width: 20,
+                                height: 20),
+                            SizedBox(width: 10),
+                            Text(
+                              'translate_btn'.tr(),
+                              style: GoogleFonts.poppins(
+                                textStyle: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w400,
+                                    color: Colors.black),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      onPressed: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Languages(),
+                        ),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                          primary: Colors.white, elevation: 4),
+                    ),
                   ],
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(0, 0, 0, 20),
                   child: Text(
-                    "Choose help",
+                    'categories_title'.tr(),
                     textAlign: TextAlign.start,
                     style: GoogleFonts.poppins(
                       textStyle: TextStyle(
@@ -44,7 +77,7 @@ class _CategoriesState extends State<Categories> {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(25, 0, 25, 0),
                   child: Text(
-                    "Choose from the categories below and browse local programs, or search for any service. Select one service at a time.",
+                    'categories_desc'.tr(),
                     textAlign: TextAlign.start,
                     style: GoogleFonts.poppins(
                       textStyle: TextStyle(
@@ -75,7 +108,7 @@ class _CategoriesState extends State<Categories> {
                               Padding(
                                 padding: const EdgeInsets.all(10.0),
                                 child: Text(
-                                  "Food",
+                                  'categories_title_1'.tr(),
                                   // textAlign: TextAlign.start,
                                   style: GoogleFonts.poppins(
                                     textStyle: TextStyle(
@@ -97,7 +130,7 @@ class _CategoriesState extends State<Categories> {
                                           padding: const EdgeInsets.fromLTRB(
                                               20, 10, 20, 10),
                                           child: Text(
-                                            "Emergency food",
+                                            'categories_btn1'.tr(),
                                             style: GoogleFonts.poppins(
                                               textStyle: TextStyle(
                                                   fontSize: 20,
@@ -125,7 +158,7 @@ class _CategoriesState extends State<Categories> {
                                           padding: const EdgeInsets.fromLTRB(
                                               20, 10, 20, 10),
                                           child: Text(
-                                            "Food delivery",
+                                            'categories_btn2'.tr(),
                                             style: GoogleFonts.poppins(
                                               textStyle: TextStyle(
                                                   fontSize: 20,
@@ -166,7 +199,7 @@ class _CategoriesState extends State<Categories> {
                             Padding(
                               padding: const EdgeInsets.all(10.0),
                               child: Text(
-                                "Health",
+                                'categories_title_2'.tr(),
                                 // textAlign: TextAlign.start,
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(
@@ -187,7 +220,7 @@ class _CategoriesState extends State<Categories> {
                                         padding: const EdgeInsets.fromLTRB(
                                             20, 10, 20, 10),
                                         child: Text(
-                                          "Medical care",
+                                          'categories2_btn1'.tr(),
                                           style: GoogleFonts.poppins(
                                             textStyle: TextStyle(
                                                 fontSize: 20,
@@ -213,7 +246,7 @@ class _CategoriesState extends State<Categories> {
                                         padding: const EdgeInsets.fromLTRB(
                                             20, 10, 20, 10),
                                         child: Text(
-                                          "Mental health care",
+                                          'categories2_btn2'.tr(),
                                           style: GoogleFonts.poppins(
                                             textStyle: TextStyle(
                                                 fontSize: 20,
@@ -239,7 +272,7 @@ class _CategoriesState extends State<Categories> {
                                         padding: const EdgeInsets.fromLTRB(
                                             20, 10, 20, 10),
                                         child: Text(
-                                          "Dental care",
+                                          'categories2_btn3'.tr(),
                                           style: GoogleFonts.poppins(
                                             textStyle: TextStyle(
                                                 fontSize: 20,
@@ -265,7 +298,7 @@ class _CategoriesState extends State<Categories> {
                                         padding: const EdgeInsets.fromLTRB(
                                             20, 10, 20, 10),
                                         child: Text(
-                                          "Vision care",
+                                          'categories2_btn4'.tr(),
                                           style: GoogleFonts.poppins(
                                             textStyle: TextStyle(
                                                 fontSize: 20,
@@ -303,7 +336,7 @@ class _CategoriesState extends State<Categories> {
                             Padding(
                               padding: const EdgeInsets.all(10.0),
                               child: Text(
-                                "Housing",
+                                'categories_title_3'.tr(),
                                 // textAlign: TextAlign.start,
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(
@@ -324,7 +357,7 @@ class _CategoriesState extends State<Categories> {
                                         padding: const EdgeInsets.fromLTRB(
                                             20, 10, 20, 10),
                                         child: Text(
-                                          "Temporary shelter",
+                                          'categories3_btn1'.tr(),
                                           style: GoogleFonts.poppins(
                                             textStyle: TextStyle(
                                                 fontSize: 20,
@@ -350,7 +383,7 @@ class _CategoriesState extends State<Categories> {
                                         padding: const EdgeInsets.fromLTRB(
                                             20, 10, 20, 10),
                                         child: Text(
-                                          "Maintenance & repairs",
+                                          'categories3_btn2'.tr(),
                                           style: GoogleFonts.poppins(
                                             textStyle: TextStyle(
                                                 fontSize: 20,
@@ -376,7 +409,7 @@ class _CategoriesState extends State<Categories> {
                                         padding: const EdgeInsets.fromLTRB(
                                             20, 10, 20, 10),
                                         child: Text(
-                                          "Housing advice ",
+                                          'categories3_btn3'.tr(),
                                           style: GoogleFonts.poppins(
                                             textStyle: TextStyle(
                                                 fontSize: 20,

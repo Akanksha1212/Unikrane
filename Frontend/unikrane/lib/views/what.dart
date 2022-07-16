@@ -1,5 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:unikrane/views/languages.dart';
 import 'package:unikrane/widgets/customDialog.dart';
 
 class What extends StatefulWidget {
@@ -24,12 +26,43 @@ class _WhatState extends State<What> {
                     image: AssetImage('assets/toplogo.png'),
                     width: 200,
                     height: 200),
+                ElevatedButton(
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(5, 5, 5, 5),
+                    child: Row(
+                      children: [
+                        Image(
+                            image: AssetImage('assets/translategoogle.png'),
+                            width: 20,
+                            height: 20),
+                        SizedBox(width: 10),
+                        Text(
+                          'translate_btn'.tr(),
+                          style: GoogleFonts.poppins(
+                            textStyle: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.w400,
+                                color: Colors.black),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Languages(),
+                    ),
+                  ),
+                  style: ElevatedButton.styleFrom(
+                      primary: Colors.white, elevation: 4),
+                ),
               ],
             ),
             Padding(
               padding: const EdgeInsets.fromLTRB(20, 0, 0, 15),
               child: Text(
-                "What are you looking for?",
+                'what_heading'.tr(),
                 textAlign: TextAlign.start,
                 style: GoogleFonts.poppins(
                   textStyle: TextStyle(
@@ -42,7 +75,7 @@ class _WhatState extends State<What> {
             Padding(
               padding: const EdgeInsets.fromLTRB(20, 0, 20, 10),
               child: Text(
-                "Unikrane supports seeks to connect professionals, providers, municipalities, and the public to help anyone in need.",
+                'what_desc'.tr(),
                 textAlign: TextAlign.start,
                 style: GoogleFonts.poppins(
                   textStyle: TextStyle(
@@ -59,7 +92,7 @@ class _WhatState extends State<What> {
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(85, 15, 85, 15),
                 child: Text(
-                  "Get help",
+                  'what_gethelp'.tr(),
                   style: GoogleFonts.poppins(
                     textStyle: TextStyle(
                         fontSize: 20,
@@ -89,7 +122,7 @@ class _WhatState extends State<What> {
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(28, 15, 28, 15),
                 child: Text(
-                  "Become a volunteer",
+                  'what_volunteer'.tr(),
                   style: GoogleFonts.poppins(
                     textStyle: TextStyle(
                         fontSize: 20,

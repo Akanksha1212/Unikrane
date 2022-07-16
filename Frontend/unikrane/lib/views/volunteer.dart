@@ -1,6 +1,9 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:unikrane/widgets/customDialog.dart';
+
+import 'languages.dart';
 
 class VolunteerCategories extends StatefulWidget {
   const VolunteerCategories({Key? key}) : super(key: key);
@@ -26,12 +29,43 @@ class _VolunteerCategoriesState extends State<VolunteerCategories> {
                         image: AssetImage('assets/toplogo.png'),
                         width: 150,
                         height: 150),
+                    ElevatedButton(
+                      child: Padding(
+                        padding: const EdgeInsets.fromLTRB(5, 5, 5, 5),
+                        child: Row(
+                          children: [
+                            Image(
+                                image: AssetImage('assets/translategoogle.png'),
+                                width: 20,
+                                height: 20),
+                            SizedBox(width: 10),
+                            Text(
+                              'translate_btn'.tr(),
+                              style: GoogleFonts.poppins(
+                                textStyle: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w400,
+                                    color: Colors.black),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      onPressed: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Languages(),
+                        ),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                          primary: Colors.white, elevation: 4),
+                    ),
                   ],
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(20, 0, 0, 20),
                   child: Text(
-                    "What services can you offer?",
+                    'volunteer_title'.tr(),
                     textAlign: TextAlign.start,
                     style: GoogleFonts.poppins(
                       textStyle: TextStyle(
@@ -44,7 +78,7 @@ class _VolunteerCategoriesState extends State<VolunteerCategories> {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(25, 0, 25, 0),
                   child: Text(
-                    "Choose from the Categories below and browse local programs, or search for any service. Select one service at a time.",
+                    'volunteer_desc'.tr(),
                     textAlign: TextAlign.start,
                     style: GoogleFonts.poppins(
                       textStyle: TextStyle(
@@ -75,7 +109,7 @@ class _VolunteerCategoriesState extends State<VolunteerCategories> {
                               Padding(
                                 padding: const EdgeInsets.all(10.0),
                                 child: Text(
-                                  "Food",
+                                  'volunteer_title_1'.tr(),
                                   // textAlign: TextAlign.start,
                                   style: GoogleFonts.poppins(
                                     textStyle: TextStyle(
@@ -97,7 +131,7 @@ class _VolunteerCategoriesState extends State<VolunteerCategories> {
                                           padding: const EdgeInsets.fromLTRB(
                                               20, 10, 20, 10),
                                           child: Text(
-                                            "Emergency food",
+                                            'volunteer_btn0'.tr(),
                                             style: GoogleFonts.poppins(
                                               textStyle: TextStyle(
                                                   fontSize: 20,
@@ -125,7 +159,7 @@ class _VolunteerCategoriesState extends State<VolunteerCategories> {
                                           padding: const EdgeInsets.fromLTRB(
                                               20, 10, 20, 10),
                                           child: Text(
-                                            "Help pay for food",
+                                            'volunteer_btn1'.tr(),
                                             style: GoogleFonts.poppins(
                                               textStyle: TextStyle(
                                                   fontSize: 20,
@@ -153,7 +187,7 @@ class _VolunteerCategoriesState extends State<VolunteerCategories> {
                                           padding: const EdgeInsets.fromLTRB(
                                               20, 10, 20, 10),
                                           child: Text(
-                                            "Food delivery",
+                                            'volunteer_btn2'.tr(),
                                             style: GoogleFonts.poppins(
                                               textStyle: TextStyle(
                                                   fontSize: 20,
@@ -194,7 +228,7 @@ class _VolunteerCategoriesState extends State<VolunteerCategories> {
                             Padding(
                               padding: const EdgeInsets.all(10.0),
                               child: Text(
-                                "Health",
+                                'volunteer_title_2'.tr(),
                                 // textAlign: TextAlign.start,
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(
@@ -215,7 +249,7 @@ class _VolunteerCategoriesState extends State<VolunteerCategories> {
                                         padding: const EdgeInsets.fromLTRB(
                                             20, 10, 20, 10),
                                         child: Text(
-                                          "Medical care",
+                                          'volunteer_btn3'.tr(),
                                           style: GoogleFonts.poppins(
                                             textStyle: TextStyle(
                                                 fontSize: 20,
@@ -241,7 +275,7 @@ class _VolunteerCategoriesState extends State<VolunteerCategories> {
                                         padding: const EdgeInsets.fromLTRB(
                                             20, 10, 20, 10),
                                         child: Text(
-                                          "Mental health care",
+                                          'volunteer_btn4'.tr(),
                                           style: GoogleFonts.poppins(
                                             textStyle: TextStyle(
                                                 fontSize: 20,
@@ -267,7 +301,7 @@ class _VolunteerCategoriesState extends State<VolunteerCategories> {
                                         padding: const EdgeInsets.fromLTRB(
                                             20, 10, 20, 10),
                                         child: Text(
-                                          "Dental care",
+                                          'volunteer_btn5'.tr(),
                                           style: GoogleFonts.poppins(
                                             textStyle: TextStyle(
                                                 fontSize: 20,
@@ -293,7 +327,7 @@ class _VolunteerCategoriesState extends State<VolunteerCategories> {
                                         padding: const EdgeInsets.fromLTRB(
                                             20, 10, 20, 10),
                                         child: Text(
-                                          "Vision care",
+                                          'volunteer_btn6'.tr(),
                                           style: GoogleFonts.poppins(
                                             textStyle: TextStyle(
                                                 fontSize: 20,
@@ -331,7 +365,7 @@ class _VolunteerCategoriesState extends State<VolunteerCategories> {
                             Padding(
                               padding: const EdgeInsets.all(10.0),
                               child: Text(
-                                "Housing",
+                                'volunteer_title_3'.tr(),
                                 // textAlign: TextAlign.start,
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(
@@ -352,7 +386,7 @@ class _VolunteerCategoriesState extends State<VolunteerCategories> {
                                         padding: const EdgeInsets.fromLTRB(
                                             20, 10, 20, 10),
                                         child: Text(
-                                          "Temporary shelter",
+                                          'volunteer_btn7'.tr(),
                                           style: GoogleFonts.poppins(
                                             textStyle: TextStyle(
                                                 fontSize: 20,
@@ -378,7 +412,7 @@ class _VolunteerCategoriesState extends State<VolunteerCategories> {
                                         padding: const EdgeInsets.fromLTRB(
                                             20, 10, 20, 10),
                                         child: Text(
-                                          "Maintenance & repairs",
+                                          'volunteer_btn8'.tr(),
                                           style: GoogleFonts.poppins(
                                             textStyle: TextStyle(
                                                 fontSize: 20,
@@ -404,7 +438,7 @@ class _VolunteerCategoriesState extends State<VolunteerCategories> {
                                         padding: const EdgeInsets.fromLTRB(
                                             20, 10, 20, 10),
                                         child: Text(
-                                          "Housing advice ",
+                                          'volunteer_btn9'.tr(),
                                           style: GoogleFonts.poppins(
                                             textStyle: TextStyle(
                                                 fontSize: 20,

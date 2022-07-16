@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -67,7 +68,7 @@ class CustomDialog extends StatelessWidget {
                           borderSide:
                               BorderSide(color: Colors.black, width: 1.0),
                         ),
-                        hintText: 'Name',
+                        hintText: 'text_field_name'.tr(),
                       ),
                     ),
                   ),
@@ -88,7 +89,7 @@ class CustomDialog extends StatelessWidget {
                           borderSide:
                               BorderSide(color: Colors.black, width: 1.0),
                         ),
-                        hintText: 'Age',
+                        hintText: 'text_field_age'.tr(),
                       ),
                     ),
                   ),

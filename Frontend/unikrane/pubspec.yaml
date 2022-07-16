@@ -39,6 +39,8 @@ dependencies:
   scroll_snap_list: ^0.9.1
   easy_localization: ^3.0.1
   provider: ^6.0.3
+  flutter_inappwebview: ^5.4.3+7
+  permission_handler: ^10.0.0
 
 dev_dependencies:
   flutter_test:

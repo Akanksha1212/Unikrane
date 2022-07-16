@@ -13,7 +13,8 @@ class _SignSwiperPageState extends State<SignSwiperPage>
     with SingleTickerProviderStateMixin {
   //Animation controller
   late AnimationController _animationController;
-  final Uri _url = Uri.parse('https://unikrane-demo.vercel.app/');
+  final Uri _url = Uri.parse(
+      'https://unikrane-demo.vercel.app/join/75ac53f8-c3ff-4081-a1bf-121a6bcbd892');
   Future<void> _launchUrl() async {
     if (!await launchUrl(_url)) {
       throw 'Could not launch $_url';
@@ -29,8 +30,8 @@ class _SignSwiperPageState extends State<SignSwiperPage>
         vsync: this, duration: Duration(milliseconds: 2000));
     //Add to the event queue
     Future.delayed(Duration(seconds: 10), () {
-      // Navigator.pushReplacementNamed(context, '/home');
-      _launchUrl();
+      Navigator.pushReplacementNamed(context, '/call');
+      // _launchUrl();
     });
   }
 
@@ -46,11 +47,36 @@ class _SignSwiperPageState extends State<SignSwiperPage>
     return Scaffold(
       backgroundColor: Color(0xffFEE704),
       //Center
-      body: Center(
-        child: Image(
-            image: AssetImage("assets/radarLoader.gif"),
-            width: 280,
-            height: 280),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: IconButton(
+                  iconSize: 30,
+                  icon: const Icon(
+                    Icons.arrow_back,
+                  ),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                ),
+              ),
+            ],
+          ),
+          Center(
+            child: Image(
+                image: AssetImage("assets/radarLoader.gif"),
+                width: 280,
+                height: 280),
+          ),
+          SizedBox(
+            height: 30,
+          )
+        ],
       ),
     );
   }

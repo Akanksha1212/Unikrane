@@ -22,6 +22,15 @@ class Languages extends StatelessWidget {
                   image: AssetImage('assets/toplogo.png'),
                   width: 200,
                   height: 200),
+              IconButton(
+                iconSize: 20,
+                icon: const Icon(
+                  Icons.arrow_back,
+                ),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+              ),
             ],
           ),
           Container(

@@ -28,6 +28,15 @@ class _CategoriesState extends State<Categories> {
                         image: AssetImage('assets/toplogo.png'),
                         width: 150,
                         height: 150),
+                    IconButton(
+                      iconSize: 20,
+                      icon: const Icon(
+                        Icons.arrow_back,
+                      ),
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                    ),
                     ElevatedButton(
                       child: Padding(
                         padding: const EdgeInsets.fromLTRB(5, 5, 5, 5),

@@ -24,8 +24,17 @@ class _WhatState extends State<What> {
               children: [
                 Image(
                     image: AssetImage('assets/toplogo.png'),
-                    width: 200,
-                    height: 200),
+                    width: 150,
+                    height: 150),
+                IconButton(
+                  iconSize: 20,
+                  icon: const Icon(
+                    Icons.arrow_back,
+                  ),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                ),
                 ElevatedButton(
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(5, 5, 5, 5),

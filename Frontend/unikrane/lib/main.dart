@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:unikrane/views/categories.dart';
+import 'package:unikrane/views/inappwebview.dart';
 import 'package:unikrane/views/radarPage.dart';
 import 'package:unikrane/views/volunteer.dart';
 import 'package:unikrane/views/what.dart';
@@ -9,8 +10,13 @@ import 'package:unikrane/views/homepage.dart';
 
 import 'controller/language_controller.dart';
 
+import 'package:flutter_inappwebview/flutter_inappwebview.dart';
+import 'package:permission_handler/permission_handler.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Permission.camera.request();
+  await Permission.microphone.request();
   await EasyLocalization.ensureInitialized();
   runApp(MultiProvider(
     providers: [
@@ -57,6 +63,9 @@ class _MyAppState extends State<MyApp> {
               return MaterialPageRoute(builder: (context) => Categories());
             case '/radar':
               return MaterialPageRoute(builder: (context) => SignSwiperPage());
+            case '/call':
+              return MaterialPageRoute(
+                  builder: (context) => InAppWebViewPage());
             case '/volunteer':
               return MaterialPageRoute(
                   builder: (context) => VolunteerCategories());

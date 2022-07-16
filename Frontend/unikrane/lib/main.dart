@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:unikrane/views/categories.dart';
+import 'package:unikrane/views/radarPage.dart';
 import 'package:unikrane/views/what.dart';
 import 'package:unikrane/views/homepage.dart';
 
@@ -16,6 +17,8 @@ void main() {
           return MaterialPageRoute(builder: (context) => What());
         case '/categories':
           return MaterialPageRoute(builder: (context) => Categories());
+        case '/radar':
+          return MaterialPageRoute(builder: (context) => SignSwiperPage());
       }
     },
     debugShowCheckedModeBanner: false,

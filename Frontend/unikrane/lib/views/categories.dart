@@ -134,7 +134,8 @@ class _CategoriesState extends State<Categories> {
                                           ),
                                         ),
                                         onPressed: () {
-                                          Navigator.pushNamed(context, '/home');
+                                          Navigator.pushNamed(
+                                              context, '/radar');
                                         },
                                         style: ElevatedButton.styleFrom(
                                             primary: Colors.white,
